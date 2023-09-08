@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33927.249
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSample", "console\ConsoleSample.csproj", "{53698712-6035-4282-A355-A3A00DEDF4A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "docker-agent-installed\alpine\WeatherForecast.csproj", "{3CA1E2B2-AE6A-4FA9-90F0-2F8D718E7343}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-agent-installed", "docker-agent-installed", "{FB471759-1FA6-406C-B079-6EF91EF64B3F}"
+	ProjectSection(SolutionItems) = preProject
+		docker-agent-installed\README.md = docker-agent-installed\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "alpine", "alpine", "{FC7ABB46-D9C8-4965-9F65-B007DBD8086D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "centos", "centos", "{EB9E16C4-F7B4-457C-93CF-BC86F042E3EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "docker-agent-installed\centos\WeatherForecast.csproj", "{B9E9333C-F976-4567-AC90-1921F88A3041}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ubuntu", "ubuntu", "{D62C3FC6-E555-41DA-9351-312007EAF83A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "docker-agent-installed\ubuntu\WeatherForecast.csproj", "{009183F1-7D25-40D6-9144-3D71B43498D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "console", "console", "{596B0B59-CECC-4AD4-9FC2-529A01B845E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D275BC50-02B5-43A2-9C41-DF48BEF78A99}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		cla.md = cla.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE = LICENSE
+		README.md = README.md
+		README_agent.md = README_agent.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-agent-nuget", "docker-agent-nuget", "{76CA8B93-FD40-403C-AC3B-CBD2C51A49CA}"
+	ProjectSection(SolutionItems) = preProject
+		docker-agent-nuget\README.md = docker-agent-nuget\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "alpine", "alpine", "{55F6253B-4003-461F-A29A-14582ED03740}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "centos", "centos", "{1794AFA7-B091-4492-B070-D804B23A5065}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ubuntu", "ubuntu", "{0B1D7706-7FB7-45A2-9062-35ECAF9723A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "docker-agent-nuget\alpine\WeatherForecast.csproj", "{9741FC12-0F22-4501-9327-FAE0FC2F320C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "docker-agent-nuget\centos\WeatherForecast.csproj", "{CBF057B6-72B1-44E7-9E9F-0CEC22D63A23}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "docker-agent-nuget\ubuntu\WeatherForecast.csproj", "{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53698712-6035-4282-A355-A3A00DEDF4A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53698712-6035-4282-A355-A3A00DEDF4A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53698712-6035-4282-A355-A3A00DEDF4A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53698712-6035-4282-A355-A3A00DEDF4A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA1E2B2-AE6A-4FA9-90F0-2F8D718E7343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA1E2B2-AE6A-4FA9-90F0-2F8D718E7343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA1E2B2-AE6A-4FA9-90F0-2F8D718E7343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA1E2B2-AE6A-4FA9-90F0-2F8D718E7343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9E9333C-F976-4567-AC90-1921F88A3041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E9333C-F976-4567-AC90-1921F88A3041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E9333C-F976-4567-AC90-1921F88A3041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E9333C-F976-4567-AC90-1921F88A3041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{009183F1-7D25-40D6-9144-3D71B43498D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{009183F1-7D25-40D6-9144-3D71B43498D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{009183F1-7D25-40D6-9144-3D71B43498D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{009183F1-7D25-40D6-9144-3D71B43498D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9741FC12-0F22-4501-9327-FAE0FC2F320C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9741FC12-0F22-4501-9327-FAE0FC2F320C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9741FC12-0F22-4501-9327-FAE0FC2F320C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9741FC12-0F22-4501-9327-FAE0FC2F320C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF057B6-72B1-44E7-9E9F-0CEC22D63A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF057B6-72B1-44E7-9E9F-0CEC22D63A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF057B6-72B1-44E7-9E9F-0CEC22D63A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF057B6-72B1-44E7-9E9F-0CEC22D63A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{53698712-6035-4282-A355-A3A00DEDF4A1} = {596B0B59-CECC-4AD4-9FC2-529A01B845E2}
+		{3CA1E2B2-AE6A-4FA9-90F0-2F8D718E7343} = {FC7ABB46-D9C8-4965-9F65-B007DBD8086D}
+		{FC7ABB46-D9C8-4965-9F65-B007DBD8086D} = {FB471759-1FA6-406C-B079-6EF91EF64B3F}
+		{EB9E16C4-F7B4-457C-93CF-BC86F042E3EF} = {FB471759-1FA6-406C-B079-6EF91EF64B3F}
+		{B9E9333C-F976-4567-AC90-1921F88A3041} = {EB9E16C4-F7B4-457C-93CF-BC86F042E3EF}
+		{D62C3FC6-E555-41DA-9351-312007EAF83A} = {FB471759-1FA6-406C-B079-6EF91EF64B3F}
+		{009183F1-7D25-40D6-9144-3D71B43498D7} = {D62C3FC6-E555-41DA-9351-312007EAF83A}
+		{55F6253B-4003-461F-A29A-14582ED03740} = {76CA8B93-FD40-403C-AC3B-CBD2C51A49CA}
+		{1794AFA7-B091-4492-B070-D804B23A5065} = {76CA8B93-FD40-403C-AC3B-CBD2C51A49CA}
+		{0B1D7706-7FB7-45A2-9062-35ECAF9723A2} = {76CA8B93-FD40-403C-AC3B-CBD2C51A49CA}
+		{9741FC12-0F22-4501-9327-FAE0FC2F320C} = {55F6253B-4003-461F-A29A-14582ED03740}
+		{CBF057B6-72B1-44E7-9E9F-0CEC22D63A23} = {1794AFA7-B091-4492-B070-D804B23A5065}
+		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325} = {0B1D7706-7FB7-45A2-9062-35ECAF9723A2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {974824D6-453F-4962-AF8A-31949A0F847E}
+	EndGlobalSection
+EndGlobal
