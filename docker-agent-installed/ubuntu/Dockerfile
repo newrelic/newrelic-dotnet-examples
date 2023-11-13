@@ -12,7 +12,13 @@ RUN dotnet publish -c Release -o /app/publish
 
 FROM base AS final
 
-# download and install the latest version of the New Relic .NET Agent via the apt package manager
+# Download and install the latest version of the New Relic .NET Agent via the apt package manager.
+#
+# To use a specific version instead, modify the apt-get install command to reference a specific version
+#
+# For example, to use v10.17.0 of the .NET agent, you would use the following apt-get install command:
+#  apt-get install -y newrelic-dotnet-agent=10.17.0
+#
 # the agent is installed at /usr/local/new-relic-dotnet-agent
 RUN apt-get update && apt-get install -y wget ca-certificates gnupg \
 && echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' | tee /etc/apt/sources.list.d/newrelic.list \

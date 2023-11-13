@@ -19,9 +19,15 @@ RUN dnf install aspnetcore-runtime-7.0 -y
 # install wget
 RUN yum -y update && yum -y install wget
 
-# download and install the New Relic .NET Agent using the rpm package for the latest agent release
+# Download and install the New Relic .NET Agent using the rpm package for the latest agent release. 
+#
 # To use a specific version instead, modify the wget and rpm commands to reference the full path to the 
 # dotnet agent version rpm file you want to use instead of the wildcard specification
+# 
+# For example, to use v10.17.0 of the .NET agent, you would run the following command:
+# RUN wget https://download.newrelic.com/dot_net_agent/previous_releases/10.17.0/newrelic-dotnet-agent-10.17.0-1.x86_64.rpm \
+#     && rpm -i download.newrelic.com/dot_net_agent/previous_releases/10.17.0/newrelic-dotnet-agent-10.17.0-1.x86_64.rpm \
+#     && rm -rf download.newrelic.com
 # 
 # the agent is installed at /usr/local/new-relic-dotnet-agent
 RUN wget https://download.newrelic.com/dot_net_agent/latest_release -A '*.x86_64.rpm' -r \

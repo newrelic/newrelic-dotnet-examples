@@ -10,6 +10,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <!-- 
+      Use the latest version of the NewRelic.Agent package. 
+      NOTE: For a production app, you should always reference a specific package version
+    -->
     <PackageReference Include="NewRelic.Agent" Version="*"/>
   </ItemGroup>
 
