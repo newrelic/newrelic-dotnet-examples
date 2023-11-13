@@ -14,7 +14,7 @@ trim_trailing_whitespace = true
 [*.{cs,vb}]
 # license header is required
 dotnet_diagnostic.IDE0073.severity = error
-file_header_template = Copyright 2020 New Relic, Inc. All rights reserved.\nSPDX-License-Identifier: Apache-2.0
+file_header_template = Copyright 2023 New Relic, Inc. All rights reserved.\nSPDX-License-Identifier: Apache-2.0
 
 # Organize usings
 dotnet_sort_system_directives_first = true
