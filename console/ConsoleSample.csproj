@@ -12,6 +12,10 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+    <!-- 
+      Use the latest version of the NewRelic.Agent package. 
+      NOTE: For a production app, you should always reference a specific package version
+    -->
     <PackageReference Include="NewRelic.Agent" Version="*"/>
     <PackageReference Include="NewRelic.Agent.Api" Version="*"/>
   </ItemGroup>
