@@ -4,7 +4,7 @@ EXPOSE 80
 ENV ASPNETCORE_URLS=http://+:80
 
 # build using the Debian-based .NET SDK image
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build 
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /src
 COPY . ./
@@ -14,7 +14,7 @@ RUN dotnet publish -c Release -o /app/publish
 FROM base AS final
 
 # install asp.netcore
-RUN dnf install aspnetcore-runtime-7.0 -y
+RUN dnf install aspnetcore-runtime-8.0 -y
 
 # install wget
 RUN yum -y update && yum -y install wget
@@ -24,9 +24,9 @@ RUN yum -y update && yum -y install wget
 # To use a specific version instead, modify the wget and rpm commands to reference the full path to the 
 # dotnet agent version rpm file you want to use instead of the wildcard specification
 # 
-# For example, to use v10.17.0 of the .NET agent, you would run the following command:
-# RUN wget https://download.newrelic.com/dot_net_agent/previous_releases/10.17.0/newrelic-dotnet-agent-10.17.0-1.x86_64.rpm \
-#     && rpm -i download.newrelic.com/dot_net_agent/previous_releases/10.17.0/newrelic-dotnet-agent-10.17.0-1.x86_64.rpm \
+# For example, to use v10.21.1 of the .NET agent, you would run the following command:
+# RUN wget https://download.newrelic.com/dot_net_agent/previous_releases/10.21.1/newrelic-dotnet-agent-10.21.1-1.x86_64.rpm \
+#     && rpm -i download.newrelic.com/dot_net_agent/previous_releases/10.21.1/newrelic-dotnet-agent-10.21.1-1.x86_64.rpm \
 #     && rm -rf download.newrelic.com
 # 
 # the agent is installed at /usr/local/new-relic-dotnet-agent

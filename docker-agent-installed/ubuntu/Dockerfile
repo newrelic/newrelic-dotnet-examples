@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0-jammy AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-jammy AS base
 WORKDIR /app
 EXPOSE 80
 ENV ASPNETCORE_URLS=http://+:80
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0-jammy AS build 
+FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
 
 WORKDIR /src
 COPY . ./
@@ -16,8 +16,8 @@ FROM base AS final
 #
 # To use a specific version instead, modify the apt-get install command to reference a specific version
 #
-# For example, to use v10.17.0 of the .NET agent, you would use the following apt-get install command:
-#  apt-get install -y newrelic-dotnet-agent=10.17.0
+# For example, to use v10.21.1 of the .NET agent, you would use the following apt-get install command:
+#  apt-get install -y newrelic-dotnet-agent=10.21.1
 #
 # the agent is installed at /usr/local/new-relic-dotnet-agent
 RUN apt-get update && apt-get install -y wget ca-certificates gnupg \
