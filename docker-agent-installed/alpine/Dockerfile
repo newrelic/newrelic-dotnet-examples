@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS base
 WORKDIR /app
 EXPOSE 80
 ENV ASPNETCORE_URLS=http://+:80
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build 
+FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
 
 WORKDIR /src
 COPY . ./
@@ -17,10 +17,10 @@ FROM base AS final
 # To use a specific version instead, modify the wget and tar commands to reference the full path to the 
 # dotnet agent version tarball you want to use instead of the wildcard specification
 # 
-# For example, to use v10.17.0 of the .NET agent, you would run the following command:
+# For example, to use v10.21.1 of the .NET agent, you would run the following command:
 # RUN apk update && apk add --no-cache wget tar \
-#     && wget https://download.newrelic.com/dot_net_agent/previous_releases/10.17.0/newrelic-dotnet-agent-10.17.0.amd64.tar.gz \
-#     && tar -xzf -i download.newrelic.com/dot_net_agent/previous_releases/10.17.0/newrelic-dotnet-agent-10.17.0.amd64.tar.gz -C /usr/local \
+#     && wget https://download.newrelic.com/dot_net_agent/previous_releases/10.21.1/newrelic-dotnet-agent-10.21.1.amd64.tar.gz \
+#     && tar -xzf -i download.newrelic.com/dot_net_agent/previous_releases/10.21.1/newrelic-dotnet-agent-10.21.1.amd64.tar.gz -C /usr/local \
 #     && rm -rf download.newrelic.com
 # 
 # the agent is installed at /usr/local/new-relic-dotnet-agent
