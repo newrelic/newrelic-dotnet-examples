@@ -2,7 +2,7 @@
 
 ## Overview
 
-This sample demonstrates running a .NET 7 Web API in an Alpine-based Docker container with New Relic .NET Agent instrumentation via NuGet packages.
+This sample demonstrates running a .NET 8 Web API in an Alpine-based Docker container with New Relic .NET Agent instrumentation via NuGet packages.
 
 The sample application is just the "default" application created by running `dotnet new webapi`.
 
