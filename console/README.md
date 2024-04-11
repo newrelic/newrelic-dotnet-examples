@@ -1,7 +1,7 @@
-# New Relic .NET Agent Sample - Console (.NET 7)
+# New Relic .NET Agent Sample - Console (.NET 8)
 
 ## Overview
-This sample demonstrates a .NET 7 Console app, using the `NewRelic.Agent` [NuGet package](https://www.nuget.org/packages/NewRelic.Agent).
+This sample demonstrates a .NET 8 Console app, using the `NewRelic.Agent` [NuGet package](https://www.nuget.org/packages/NewRelic.Agent).
 
 ## To run this sample:
 1. Edit `runSample.ps1` and replace `<your-new-relic-license-key>` with your New Relic license key.
