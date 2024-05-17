@@ -31,7 +31,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CONTRIBUTING.md = CONTRIBUTING.md
 		LICENSE = LICENSE
 		README.md = README.md
-		README_agent.md = README_agent.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-agent-nuget", "docker-agent-nuget", "{76CA8B93-FD40-403C-AC3B-CBD2C51A49CA}"
@@ -50,6 +49,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "docker-agent-nuget\centos\WeatherForecast.csproj", "{CBF057B6-72B1-44E7-9E9F-0CEC22D63A23}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecast", "docker-agent-nuget\ubuntu\WeatherForecast.csproj", "{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "elastic-beanstalk", "elastic-beanstalk", "{5E23846E-C310-412F-81FB-477254B68FFA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticBeanstalkWindows", "elastic-beanstalk\ElasticBeanstalkWindows\ElasticBeanstalkWindows.csproj", "{C1DC3E16-E87D-4AA9-9D4B-D2DCA23B0587}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticBeanstalkLinux", "elastic-beanstalk\ElasticBeanstalkLinux\ElasticBeanstalkLinux.csproj", "{28F7EABE-3B09-4098-9DA8-028E9EF776DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +90,14 @@ Global
 		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1DC3E16-E87D-4AA9-9D4B-D2DCA23B0587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1DC3E16-E87D-4AA9-9D4B-D2DCA23B0587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1DC3E16-E87D-4AA9-9D4B-D2DCA23B0587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1DC3E16-E87D-4AA9-9D4B-D2DCA23B0587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F7EABE-3B09-4098-9DA8-028E9EF776DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F7EABE-3B09-4098-9DA8-028E9EF776DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F7EABE-3B09-4098-9DA8-028E9EF776DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F7EABE-3B09-4098-9DA8-028E9EF776DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +116,8 @@ Global
 		{9741FC12-0F22-4501-9327-FAE0FC2F320C} = {55F6253B-4003-461F-A29A-14582ED03740}
 		{CBF057B6-72B1-44E7-9E9F-0CEC22D63A23} = {1794AFA7-B091-4492-B070-D804B23A5065}
 		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325} = {0B1D7706-7FB7-45A2-9062-35ECAF9723A2}
+		{C1DC3E16-E87D-4AA9-9D4B-D2DCA23B0587} = {5E23846E-C310-412F-81FB-477254B68FFA}
+		{28F7EABE-3B09-4098-9DA8-028E9EF776DE} = {5E23846E-C310-412F-81FB-477254B68FFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {974824D6-453F-4962-AF8A-31949A0F847E}
