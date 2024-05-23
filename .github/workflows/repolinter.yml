@@ -22,7 +22,7 @@ jobs:
             return data.data && data.data.default_branch === context.ref.split('/').slice(-1)[0]
       - name: Checkout Self
         if: ${{ steps.default-branch.outputs.result == 'true' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
       - name: Run Repolinter
         if: ${{ steps.default-branch.outputs.result == 'true' }}
         uses: newrelic/repolinter-action@v1
