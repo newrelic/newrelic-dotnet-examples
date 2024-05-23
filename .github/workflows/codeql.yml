@@ -16,9 +16,8 @@ concurrency:
 
 jobs:
   analyze-dotnet:
-    name: Analyze .NET
-    runs-on: windows-latest
-    timeout-minutes: 120
+    name: Analyze .NET Samples Solution
+    runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
@@ -28,6 +27,12 @@ jobs:
       fail-fast: false
 
     steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@a4aa98b93cab29d9b1101a6143fb8bce00e2eac4 # v2.7.1
+      with:
+        disable-sudo: true
+        egress-policy: audit
+
     - name: Checkout
       uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
       with:
