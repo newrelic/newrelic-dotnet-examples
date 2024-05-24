@@ -14,7 +14,7 @@ You can build and run the code samples in this repo by opening the `NewRelicDotN
 
 ## Support
 
-New Relic hosts and moderates an online forum where customers can interact with New Relic employees as well as other customers to get help and share best practices at [New Relic Explorers Hub](forum.newrelic.com).
+New Relic hosts and moderates an online forum where customers can interact with New Relic employees as well as other customers to get help and share best practices at [New Relic Explorers Hub](https://forum.newrelic.com).
 
 ## Contribute
 
