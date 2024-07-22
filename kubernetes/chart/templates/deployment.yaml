@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app-dotnet
+spec:
+  selector:
+    matchLabels:
+      app: test-app-dotnet
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-app-dotnet
+      annotations:
+        instrumentation.newrelic.com/inject-dotnet: "true"
+    spec:
+      containers:
+        - name: test-app-dotnet
+          image: weatherforecast:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+          env:
+          # required for the New Relic agent to start
+          - name: NEW_RELIC_APP_NAME
+            value: k8s-test-app-dotnet
+          # Other environment variables can be added here. See https://docs.newrelic.com/docs/agents/net-agent/configuration/net-agent-configuration for more information.
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-app-dotnet-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: test-app-dotnet
