@@ -25,8 +25,8 @@ FROM base AS final
 # 
 # the agent is installed at /usr/local/new-relic-dotnet-agent
 RUN apk update && apk add --no-cache wget tar \
-    && wget https://download.newrelic.com/dot_net_agent/latest_release -A '*amd64.tar.gz' -r \
-    && tar -xzf download.newrelic.com/dot_net_agent/latest_release/*.tar.gz -C /usr/local \ 
+    && wget https://download.newrelic.com/dot_net_agent/latest_release/newrelic-dotnet-agent_amd64.tar.gz -r \
+    && tar -xzf download.newrelic.com/dot_net_agent/latest_release/newrelic-dotnet-agent_amd64.tar.gz -C /usr/local \ 
     && rm -rf download.newrelic.com
 
 # Enable the agent
