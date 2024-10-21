@@ -9,7 +9,7 @@ The two important parts of this sample are installation of the New Relic .NET Ag
 to load and instrument the sample app. Refer to `Dockerfile` for details.
 
 Note that this sample uses a Ubuntu-based Docker image; you could use a Debian-based image also, by changing the tag on the two `FROM` lines in
-`Dockerfile` to reference `8.0` (or `8.0-bullseye-slim`). No other changes required are required.
+`Dockerfile` to reference `8.0` (or `8.0-bookworm-slim`). No other changes required are required.
 
 ## To run this sample:
 1. Edit `Dockerfile` and replace `<your-new-relic-license-key>` with your New Relic license key.
