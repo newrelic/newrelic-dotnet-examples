@@ -7,12 +7,13 @@ In order to use this example, you will need the following:
 
 1. A New Relic APM license key
 2. An Azure Service Bus instance with at least one queue configured.
-3. The connection string for your Azure Service Bus instance.
+3. The [connection string](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions?tabs=connection-string#get-the-connection-string) for your Azure Service Bus instance
 4. The name of the queue you want to use.
 
 Steps for testing:
 
-1. Edit `docker-compose.yml` to set your New Relic license key, Azure Service Bus connection string and queue name.
-2. `docker-compose build`
-3. `docker-compose up`
-4. The Sender and Receiver applications will each run for five minutes. You should see these applications linked in the Distributed Tracing UI in New Relic APM after a few minutes.
+1. Create a `docker.env` file to set your specific values for your New Relic license key, sending and receiving application names, and Azure Service Bus connection string and queue name.
+2. `docker-compose --env=docker.env build`
+3. `docker-compose --env-docker.env up`
+
+The Sender and Receiver applications will each run for five minutes. You should see these applications linked in the Distributed Tracing UI in New Relic APM after a few minutes.

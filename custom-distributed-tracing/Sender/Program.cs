@@ -1,7 +1,6 @@
 ﻿using Azure.Messaging.ServiceBus;
 using NewRelic.Api.Agent;
 
-
 Console.WriteLine("Hello from Sender");
 
 // Get Service Bus config from environment
