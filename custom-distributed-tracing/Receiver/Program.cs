@@ -31,11 +31,13 @@ static async Task ReceiveAMessage(ServiceBusClient client, string queueName)
     // create the sender
     ServiceBusReceiver receiver = client.CreateReceiver(queueName, new ServiceBusReceiverOptions() { ReceiveMode = ServiceBusReceiveMode.ReceiveAndDelete});
 
-    // the received message is a different type as it contains some service set properties
     Console.WriteLine("Attempting to receive message...");
     ServiceBusReceivedMessage receivedMessage = await receiver.ReceiveMessageAsync();
 
-    // Accept the incoming tracing data
+    // Call the AcceptDistributedTraceHeaders API to receive tracing data from the incoming message
+    // The API requires a "carrier" object to read tracing data key/value pairs from, and a "getter"
+    // method that knows how to read data from the carrier. In this example, we are using the
+    // "ApplicationProperties" property of the ServiceReceivedBusMessage type.
     NewRelic.Api.Agent.NewRelic.GetAgent().CurrentTransaction.AcceptDistributedTraceHeaders(receivedMessage.ApplicationProperties, Getter, TransportType.Queue);
 
     // get the message body as a string

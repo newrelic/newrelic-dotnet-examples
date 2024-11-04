@@ -1,7 +1,10 @@
 # New Relic .NET Agent Samples - Custom Distributed Tracing
 
 This folder contains a pair of sample applications to demonstrate how to use the .NET Agent's [distributed tracing APIs](https://docs.newrelic.com/docs/apm/agents/net-agent/configuration/distributed-tracing-net-agent/#manual-instrumentation) to link two instrumented services that communicate across a channel not automatically instrumented by the agent.
+The agent is added to each application via the `NewRelic.Agent` NuGet package.
+
 The channel used for demonstration purposes is [Azure Service Bus](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/messaging.servicebus-readme?view=azure-dotnet).
+The custom distributed tracing APIs need access to a "carrier" for the tracing data being added to outgoing messages and recieved from incoming messages.  For Azure Service Bus messages, the [`ApplicationProperties`](https://learn.microsoft.com/en-us/dotnet/api/azure.messaging.servicebus.servicebusmessage.applicationproperties?view=azure-dotnet) key/value store is used. Refer to the example code for details.
 
 In order to use this example, you will need the following:
 
