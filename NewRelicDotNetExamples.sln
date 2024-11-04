@@ -56,6 +56,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticBeanstalkWindows", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElasticBeanstalkLinux", "elastic-beanstalk\ElasticBeanstalkLinux\ElasticBeanstalkLinux.csproj", "{28F7EABE-3B09-4098-9DA8-028E9EF776DE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "custom-distributed-tracing", "custom-distributed-tracing", "{74106E49-BF72-4BD6-B12C-EFC148C90F80}"
+	ProjectSection(SolutionItems) = preProject
+		custom-distributed-tracing\docker-compose.yml = custom-distributed-tracing\docker-compose.yml
+		custom-distributed-tracing\README.md = custom-distributed-tracing\README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender", "custom-distributed-tracing\Sender\Sender.csproj", "{DDA626A8-8450-4E0C-91B2-85BA66D5CE7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receiver", "custom-distributed-tracing\Receiver\Receiver.csproj", "{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +108,14 @@ Global
 		{28F7EABE-3B09-4098-9DA8-028E9EF776DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F7EABE-3B09-4098-9DA8-028E9EF776DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28F7EABE-3B09-4098-9DA8-028E9EF776DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA626A8-8450-4E0C-91B2-85BA66D5CE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA626A8-8450-4E0C-91B2-85BA66D5CE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA626A8-8450-4E0C-91B2-85BA66D5CE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA626A8-8450-4E0C-91B2-85BA66D5CE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +136,8 @@ Global
 		{1884F6C7-2AAE-40F0-9DB7-28DD35F9C325} = {0B1D7706-7FB7-45A2-9062-35ECAF9723A2}
 		{C1DC3E16-E87D-4AA9-9D4B-D2DCA23B0587} = {5E23846E-C310-412F-81FB-477254B68FFA}
 		{28F7EABE-3B09-4098-9DA8-028E9EF776DE} = {5E23846E-C310-412F-81FB-477254B68FFA}
+		{DDA626A8-8450-4E0C-91B2-85BA66D5CE7E} = {74106E49-BF72-4BD6-B12C-EFC148C90F80}
+		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50} = {74106E49-BF72-4BD6-B12C-EFC148C90F80}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {974824D6-453F-4962-AF8A-31949A0F847E}

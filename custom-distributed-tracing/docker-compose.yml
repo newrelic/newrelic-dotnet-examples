@@ -1,0 +1,28 @@
+# The following must be set either in environment variables or via a .env file in the same folder as this file:
+#
+# NEW_RELIC_LICENSE_KEY
+
+# NEW_RELIC_SENDER_APP_NAME
+# NEW_RELIC_RECEIVER_APP_NAME
+#
+# AZURE_SERVICE_BUS_CONNECTION_STRING
+# AZURE_SERVICE_BUS_QUEUE_NAME
+# To build and run, execute `docker compose up` 
+
+services:
+  sender:
+    build:
+      context: ./Sender
+      args:
+        NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY}
+        NEW_RELIC_APP_NAME: ${NEW_RELIC_SENDER_APP_NAME}
+        AZURE_SERVICE_BUS_CONNECTION_STRING: ${AZURE_SERVICE_BUS_CONNECTION_STRING}
+        AZURE_SERVICE_BUS_QUEUE_NAME: ${AZURE_SERVICE_BUS_QUEUE_NAME}
+  receiver:
+    build:
+      context: ./Receiver
+      args:
+        NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY}
+        NEW_RELIC_APP_NAME: ${NEW_RELIC_RECEIVER_APP_NAME}
+        AZURE_SERVICE_BUS_CONNECTION_STRING: ${AZURE_SERVICE_BUS_CONNECTION_STRING}
+        AZURE_SERVICE_BUS_QUEUE_NAME: ${AZURE_SERVICE_BUS_QUEUE_NAME}
