@@ -36,7 +36,8 @@ static async Task SendAMessage(ServiceBusClient client, string queueName, string
     // create a message that we can send. UTF-8 encoding is used when providing a string.
     ServiceBusMessage message = new(messageText);
 
-    // Call the InsertDistributedTraceHeaders API to add tracing data to the outgoing message
+    // Call the InsertDistributedTraceHeaders API (https://docs.newrelic.com/docs/apm/agents/net-agent/net-agent-api/net-agent-api/#ITransaction) 
+    // to add tracing data to the outgoing message.
     // The API requires a "carrier" object to add tracing data key/value pairs to, and a "setter"
     // method that knows how to add data to the carrier. In this example, we are using the
     // "ApplicationProperties" property of the ServiceBusMessage type.
