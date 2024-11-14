@@ -6,4 +6,6 @@ metadata:
 spec:
   agent:
     language: dotnet
-    image: newrelic/newrelic-dotnet-init:latest # Please ensure you're using a trusted New Relic image
+    # this sample uses the latest version of the .NET init container, but for a production app, you should use a specific version tag. 
+    # See https://hub.docker.com/repository/docker/newrelic/newrelic-dotnet-init/general for a list of available tags.
+    image: newrelic/newrelic-dotnet-init:latest

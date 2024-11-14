@@ -25,12 +25,10 @@ spec:
           - name: NEW_RELIC_APP_NAME
             value: k8s-test-app-dotnet
           # Other environment variables can be added here. See https://docs.newrelic.com/docs/agents/net-agent/configuration/net-agent-configuration for more information.
-          - name: NEWRELIC_LOG_LEVEL
-            value: finest
-          - name: NEW_RELIC_LOG_CONSOLE
-            value: "1"
-          - name: NEW_RELIC_HOST
-            value: "staging-collector.newrelic.com"         
+          #- name: NEWRELIC_LOG_LEVEL
+          #  value: finest
+          #- name: NEW_RELIC_LOG_CONSOLE
+          #  value: "1"
 ---
 apiVersion: v1
 kind: Service
