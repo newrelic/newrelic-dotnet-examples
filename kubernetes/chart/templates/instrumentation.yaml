@@ -1,14 +1,11 @@
 ---
-apiVersion: newrelic.com/v1alpha1
+apiVersion: newrelic.com/v1alpha2
 kind: Instrumentation
 metadata:
-  labels:
-    app.kubernetes.io/name: instrumentation
-    app.kubernetes.io/created-by: k8s-agents-operator
-  name: newrelic-instrumentation
+  name: newrelic-instrumentation-dotnet
 spec:
-  dotnet:
+  agent:
+    language: dotnet
     # this sample uses the latest version of the .NET init container, but for a production app, you should use a specific version tag. 
     # See https://hub.docker.com/repository/docker/newrelic/newrelic-dotnet-init/general for a list of available tags.
-    image: newrelic/newrelic-dotnet-init:latest 
-
+    image: newrelic/newrelic-dotnet-init:latest
