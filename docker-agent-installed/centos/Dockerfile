@@ -4,7 +4,7 @@ EXPOSE 80
 ENV ASPNETCORE_URLS=http://+:80
 
 # build using the Debian-based .NET SDK image
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 
 WORKDIR /src
 COPY . ./
@@ -14,7 +14,7 @@ RUN dotnet publish -c Release -o /app/publish
 FROM base AS final
 
 # install asp.netcore
-RUN dnf install aspnetcore-runtime-8.0 -y
+RUN dnf install aspnetcore-runtime-9.0 -y
 
 # install wget
 RUN yum -y update && yum -y install wget
