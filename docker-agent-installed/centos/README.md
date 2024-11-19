@@ -2,7 +2,7 @@
 
 ## Overview
 
-This sample demonstrates running a .NET 8 Web API in a Centos-based Docker container, with New Relic .NET Agent instrumentation. The sample application is just the "default" application created 
+This sample demonstrates running a .NET 9 Web API in a Centos-based Docker container, with New Relic .NET Agent instrumentation. The sample application is just the "default" application created 
 by running `dotnet new webapi`.
 
 The two important parts of this sample are installation of the New Relic .NET Agent and setting the required environment variables to enable the .NET Agent

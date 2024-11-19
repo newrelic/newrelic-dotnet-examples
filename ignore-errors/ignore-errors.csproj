@@ -7,9 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include=".ebextensions\newrelic-dotnet-agent-install.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

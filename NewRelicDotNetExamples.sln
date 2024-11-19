@@ -66,6 +66,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender", "custom-distribute
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receiver", "custom-distributed-tracing\Receiver\Receiver.csproj", "{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ignore-errors", "ignore-errors\ignore-errors.csproj", "{FDDF014F-E5C9-46BB-A15D-9872CB066672}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ignore-errors", "ignore-errors", "{DB522736-B3FD-4F75-B5EB-3F39AC05BE2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kubernetes", "kubernetes", "{0895F1A7-450D-4AD7-80FA-1A3A81769DAC}"
+	ProjectSection(SolutionItems) = preProject
+		kubernetes\Dockerfile = kubernetes\Dockerfile
+		kubernetes\README.md = kubernetes\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chart", "Chart", "{B0504510-9D75-4924-B97F-10561966615E}"
+	ProjectSection(SolutionItems) = preProject
+		kubernetes\chart\.helmignore = kubernetes\chart\.helmignore
+		kubernetes\chart\Chart.yaml = kubernetes\chart\Chart.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{9F64C6D3-673E-4EF0-9DCB-BF73864DEF9E}"
+	ProjectSection(SolutionItems) = preProject
+		kubernetes\chart\templates\deployment.yaml = kubernetes\chart\templates\deployment.yaml
+		kubernetes\chart\templates\instrumentation.yaml = kubernetes\chart\templates\instrumentation.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -116,6 +138,10 @@ Global
 		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDDF014F-E5C9-46BB-A15D-9872CB066672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDDF014F-E5C9-46BB-A15D-9872CB066672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDDF014F-E5C9-46BB-A15D-9872CB066672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDDF014F-E5C9-46BB-A15D-9872CB066672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +164,9 @@ Global
 		{28F7EABE-3B09-4098-9DA8-028E9EF776DE} = {5E23846E-C310-412F-81FB-477254B68FFA}
 		{DDA626A8-8450-4E0C-91B2-85BA66D5CE7E} = {74106E49-BF72-4BD6-B12C-EFC148C90F80}
 		{C7A586C3-C0BD-4D6F-B9CE-66374900CF50} = {74106E49-BF72-4BD6-B12C-EFC148C90F80}
+		{FDDF014F-E5C9-46BB-A15D-9872CB066672} = {DB522736-B3FD-4F75-B5EB-3F39AC05BE2A}
+		{B0504510-9D75-4924-B97F-10561966615E} = {0895F1A7-450D-4AD7-80FA-1A3A81769DAC}
+		{9F64C6D3-673E-4EF0-9DCB-BF73864DEF9E} = {B0504510-9D75-4924-B97F-10561966615E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {974824D6-453F-4962-AF8A-31949A0F847E}

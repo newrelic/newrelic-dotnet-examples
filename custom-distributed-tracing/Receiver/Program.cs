@@ -1,4 +1,7 @@
-﻿using Azure.Messaging.ServiceBus;
+﻿// Copyright 2023 New Relic, Inc. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
+
+using Azure.Messaging.ServiceBus;
 using NewRelic.Api.Agent;
 
 Console.WriteLine("Hello from Reciever");
