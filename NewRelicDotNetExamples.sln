@@ -88,6 +88,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 		kubernetes\chart\templates\instrumentation.yaml = kubernetes\chart\templates\instrumentation.yaml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "custom-instrumentation", "custom-instrumentation", "{1EA88E38-60C2-401F-BAC3-498D391B4166}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xml-custom-instrumentation", "xml-custom-instrumentation", "{6537B169-CB6E-48A1-9815-16C0E6B96058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomInstrumentationXml", "custom-instrumentation\xml-custom-instrumentation\CustomInstrumentationXml.csproj", "{4B6D963D-D7D3-49E0-A89A-9583C947C80E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -142,6 +148,10 @@ Global
 		{FDDF014F-E5C9-46BB-A15D-9872CB066672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDDF014F-E5C9-46BB-A15D-9872CB066672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDDF014F-E5C9-46BB-A15D-9872CB066672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B6D963D-D7D3-49E0-A89A-9583C947C80E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6D963D-D7D3-49E0-A89A-9583C947C80E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6D963D-D7D3-49E0-A89A-9583C947C80E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6D963D-D7D3-49E0-A89A-9583C947C80E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,6 +177,8 @@ Global
 		{FDDF014F-E5C9-46BB-A15D-9872CB066672} = {DB522736-B3FD-4F75-B5EB-3F39AC05BE2A}
 		{B0504510-9D75-4924-B97F-10561966615E} = {0895F1A7-450D-4AD7-80FA-1A3A81769DAC}
 		{9F64C6D3-673E-4EF0-9DCB-BF73864DEF9E} = {B0504510-9D75-4924-B97F-10561966615E}
+		{6537B169-CB6E-48A1-9815-16C0E6B96058} = {1EA88E38-60C2-401F-BAC3-498D391B4166}
+		{4B6D963D-D7D3-49E0-A89A-9583C947C80E} = {6537B169-CB6E-48A1-9815-16C0E6B96058}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {974824D6-453F-4962-AF8A-31949A0F847E}
