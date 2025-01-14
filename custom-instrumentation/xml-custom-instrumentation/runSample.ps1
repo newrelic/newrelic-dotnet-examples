@@ -7,5 +7,8 @@ $env:CORECLR_NEWRELIC_HOME="$PWD\bin\release\net9.0\newrelic"
 $env:NEW_RELIC_LICENSE_KEY="<your-new-relic-license-key>" # *** Replace with your license key! *** 
 $env:NEW_RELIC_APP_NAME="CustomInstrumentationXmlSample"
 
+# copy the custom instrumentation xml file to the appropriate location
+Copy-Item -Path .\custom-instrumentation.xml -Destination .\bin\release\net9.0\newrelic\extensions\
+
 # run the sample
 dotnet run -c Release
