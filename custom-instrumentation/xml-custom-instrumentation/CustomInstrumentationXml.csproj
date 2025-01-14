@@ -22,7 +22,7 @@
 
   <!-- Copy the custom instrumentation xml file to the newrelic\extensions folder after the build is successful -->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="COPY /Y custom-instrumentation.xml $(OutDir)\newrelic\extensions" />
+    <Exec Command="COPY /Y custom-instrumentation.xml $(OutDir)newrelic\extensions" />
   </Target>
 
 </Project>
