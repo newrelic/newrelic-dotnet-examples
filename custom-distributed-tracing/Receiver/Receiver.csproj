@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.18.2" />
-    <PackageReference Include="NewRelic.Agent" Version="10.34.1" />
-    <PackageReference Include="NewRelic.Agent.Api" Version="10.34.1" />
-    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.18.3" />
+    <PackageReference Include="NewRelic.Agent" Version="10.35.0" />
+    <PackageReference Include="NewRelic.Agent.Api" Version="10.35.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.1" />
   </ItemGroup>
 
 </Project>
