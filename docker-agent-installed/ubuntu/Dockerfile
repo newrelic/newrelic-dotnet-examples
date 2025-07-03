@@ -22,7 +22,7 @@ FROM base AS final
 # the agent is installed at /usr/local/new-relic-dotnet-agent
 RUN apt-get update && apt-get install -y wget ca-certificates gnupg \
 && echo 'deb [signed-by=/usr/share/keyrings/newrelic-apt.gpg] http://apt.newrelic.com/debian/ newrelic non-free' | tee /etc/apt/sources.list.d/newrelic.list \
-&& wget -O- https://download.newrelic.com/NEWRELIC_APT_2DAD550E.public | sudo gpg --dearmor -o /usr/share/keyrings/newrelic-apt.gpg \
+&& wget -O- https://download.newrelic.com/NEWRELIC_APT_2DAD550E.public | gpg --import --batch --no-default-keyring --keyring /usr/share/keyrings/newrelic-apt.gpg \
 && apt-get update \
 && apt-get install -y newrelic-dotnet-agent \
 && rm -rf /var/lib/apt/lists/*
