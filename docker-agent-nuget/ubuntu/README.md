@@ -6,8 +6,6 @@ This sample demonstrates running a .NET 9 Web API in a Ubuntu-based Docker conta
 
 The sample application is just the "default" application created by running `dotnet new webapi`.
 
-The sample application is just the "default" application created by running `dotnet new webapi`.
-
 The important part of this sample is setting the required environment variables to enable the .NET Agent
 to load and instrument the sample app. Refer to `Dockerfile` for details.
 
