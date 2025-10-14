@@ -2,7 +2,7 @@
 
 ## Overview
 
-This sample demonstrates running a .NET 9 Web API in a Centos-based Docker container, with New Relic .NET Agent instrumentation via NuGet packages.
+This sample demonstrates running a .NET 10 Web API in a Centos-based Docker container, with New Relic .NET Agent instrumentation via NuGet packages.
 
 The sample application is just the "default" application created by running `dotnet new webapi`.
 

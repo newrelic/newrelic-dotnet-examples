@@ -23,9 +23,6 @@ jobs:
       contents: read
       security-events: write
 
-    strategy:
-      fail-fast: false
-
     steps:
     - name: Harden Runner
       uses: step-security/harden-runner@f4a75cfd619ee5ce8d5b864b0d183aff3c69b55a # v2.13.1
@@ -38,10 +35,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Setup .NET 9 Preview
+    - name: Setup .NET 10 Preview
       uses: actions/setup-dotnet@d4c94342e560b34958eacfc5d055d21461ed1c5d # v5.0.0
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '10.0.x'
         dotnet-quality: 'preview'
 
 

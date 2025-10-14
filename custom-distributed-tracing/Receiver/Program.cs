@@ -55,13 +55,13 @@ static IEnumerable<string> Getter(IReadOnlyDictionary<string, object> applicatio
     {
         return data;
     }
-    object value;
-    if (applicationProperties.TryGetValue(key, out value))
+
+    if (applicationProperties.TryGetValue(key, out var value))
     {
         if (value != null)
         {
             Console.WriteLine($"key=value: {key} = {value}");
-            data.Add(value.ToString());
+            data.Add(value.ToString()!);
         }
     }
     return data;

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This sample demonstrates running a .NET 9 Web API in a Ubuntu-based Docker container, with New Relic .NET Agent instrumentation via NuGet packages.
+This sample demonstrates running a .NET 10 Web API in a Ubuntu-based Docker container, with New Relic .NET Agent instrumentation via NuGet packages.
 
 The sample application is just the "default" application created by running `dotnet new webapi`.
 
@@ -10,7 +10,7 @@ The important part of this sample is setting the required environment variables 
 to load and instrument the sample app. Refer to `Dockerfile` for details.
 
 Note that this sample uses a Ubuntu-based Docker image; you could use a Debian-based image also, by changing the tag on the two `FROM` lines in
-`Dockerfile` to reference `9.0` (or `9.0-bookworm-slim`). No other changes required are required.
+`Dockerfile` to reference `10.0` (or `10.0-bookworm-slim`). No other changes required are required.
 
 ## To run this sample:
 1. Edit `Dockerfile` and replace `<your-new-relic-license-key>` with your New Relic license key.
