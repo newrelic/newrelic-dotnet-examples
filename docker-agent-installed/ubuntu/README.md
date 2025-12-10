@@ -1,4 +1,4 @@
-# New Relic .NET Agent Sample - Docker (Ubuntu or Debian)
+# New Relic .NET Agent Sample - Docker (Ubuntu)
 
 ## Overview
 
@@ -7,9 +7,6 @@ by running `dotnet new webapi`.
 
 The two important parts of this sample are installation of the New Relic .NET Agent and setting the required environment variables to enable the .NET Agent
 to load and instrument the sample app. Refer to `Dockerfile` for details.
-
-Note that this sample uses a Ubuntu-based Docker image; you could use a Debian-based image also, by changing the tag on the two `FROM` lines in
-`Dockerfile` to reference `10.0` (or `10.0-bookworm-slim`). No other changes required are required.
 
 ## To run this sample:
 1. Edit `Dockerfile` and replace `<your-new-relic-license-key>` with your New Relic license key.

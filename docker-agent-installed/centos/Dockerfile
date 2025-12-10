@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 80
 ENV ASPNETCORE_URLS=http://+:80
 
-# build using the Debian-based .NET SDK image
+# build using the Ubuntu-based .NET SDK image
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 
 WORKDIR /src
