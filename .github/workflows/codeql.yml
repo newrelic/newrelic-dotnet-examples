@@ -25,7 +25,7 @@ jobs:
 
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@a90bcbc6539c36a85cdfeb73f7e2f433735f215b # v2.15.0
+      uses: step-security/harden-runner@fe104658747b27e96e4f7e80cd0a94068e53901d # v2.16.1
       with:
         disable-sudo: true
         egress-policy: audit
@@ -36,14 +36,14 @@ jobs:
         fetch-depth: 0
 
     - name: Setup .NET 10 Preview
-      uses: actions/setup-dotnet@baa11fbfe1d6520db94683bd5c7a3818018e4309 # v5.1.0
+      uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
       with:
         dotnet-version: '10.0.x'
         dotnet-quality: 'preview'
 
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@89a39a4e59826350b863aa6b6252a07ad50cf83e # v3.29.5
+      uses: github/codeql-action/init@c10b8064de6f491fea524254123dbe5e09572f13 # v3.29.5
       with:
         languages: csharp
 
@@ -52,6 +52,6 @@ jobs:
         dotnet build 
    
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@89a39a4e59826350b863aa6b6252a07ad50cf83e # v3.29.5
+      uses: github/codeql-action/analyze@c10b8064de6f491fea524254123dbe5e09572f13 # v3.29.5
       with:
         category: "/language:csharp"
