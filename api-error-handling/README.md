@@ -23,7 +23,7 @@ The `NoticeError` method has multiple overloads:
 
 - **Exception-based** (`NoticeError(Exception)` and `NoticeError(Exception, IDictionary)`): Reports the exception with its stack trace. The agent determines the innermost exception using `Exception.GetBaseException()`.
 - **String-based** (`NoticeError(string, IDictionary)`): Creates both error events and error traces from a message string. Only the first 1023 characters are retained in error events; error traces retain the full message.
-- **Expected errors** (`NoticeError(string, IDictionary, bool)`): The `isExpected` parameter marks the error so it won't affect Apdex score and error rate. This parameter is only available on the string-based overloads.
+- **Expected errors** (`NoticeError(string, IDictionary, bool)`): The `isExpected` parameter marks the error so it won't affect Apdex score and error rate. This parameter is only available on the string-based overloads. Errors can also be marked as expected via agent configuration (`expectedClasses`, `expectedMessages`, `expectedStatusCodes` in `newrelic.config`) without code changes — see [error collector configuration](https://docs.newrelic.com/docs/apm/agents/net-agent/configuration/net-agent-configuration/#error_collector).
 
 ### Inside vs. Outside a Transaction
 
