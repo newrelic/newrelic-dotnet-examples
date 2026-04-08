@@ -67,7 +67,7 @@ This example references two NuGet packages:
 
 ### Run the Application
 
-This example uses the `NewRelic.Agent` NuGet package, which places the agent files under the build output directory. You must set several environment variables to enable the .NET CLR profiler and point it to the agent.
+This example uses the `NewRelic.Agent` NuGet package, which places the agent files under the build output directory. You must set several [environment variables](https://docs.newrelic.com/docs/apm/agents/net-agent/other-installation/understanding-net-agent-environment-variables/) to enable the .NET CLR profiler and point it to the agent.
 
 **Windows (PowerShell):**
 
