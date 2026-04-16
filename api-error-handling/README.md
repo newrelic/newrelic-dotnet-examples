@@ -87,7 +87,7 @@ $env:NEW_RELIC_APP_NAME="api-error-handling-example"
 dotnet run -c Release --no-build
 ```
 
-**Linux / macOS (bash):**
+**Linux (bash):**
 
 ```bash
 # Build first so the agent files are in the output directory
@@ -128,7 +128,7 @@ The `StartupHealthCheckService` background service runs two alternating periodic
 
 ### Example Requests
 
-**Linux / macOS (bash):**
+**Linux (bash):**
 
 ```bash
 # Successful order (200 OK) — verify the app is running

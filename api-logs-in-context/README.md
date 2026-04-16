@@ -109,7 +109,7 @@ $env:NEW_RELIC_APP_NAME="api-logs-in-context-example"
 dotnet run -c Release --no-build
 ```
 
-**Linux / macOS (bash):**
+**Linux (bash):**
 
 ```bash
 # Build first so the agent files are in the output directory
@@ -145,7 +145,7 @@ dotnet run -c Release --no-build
 
 ### Example Requests
 
-**Linux / macOS (bash):**
+**Linux (bash):**
 
 ```bash
 # Process an order — observe trace.id and span.id in the application logs (200 OK)
