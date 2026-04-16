@@ -19,7 +19,7 @@ The agent API provides two fundamentally different ways to record custom data:
 
 - **Custom events** (`RecordCustomEvent`) create individual, queryable event rows with arbitrary key-value attributes. Use them for business analytics where you need to filter, facet, and alert on specific attribute values — for example, "show me all checkouts over $100 in the US region."
 
-- **Custom metrics** (`RecordMetric`, `IncrementCounter`) create pre-aggregated metric timeslices. Use them for numeric measurements where you care about averages, percentiles, and trends — not individual occurrences.
+- **Custom metrics** (`RecordMetric`, `IncrementCounter`) create pre-aggregated metric timeslices. `RecordMetric` records a duration value; `IncrementCounter` records an  integer counter. Use them when you care about averages, min, max, and counts over time — not individual occurrences.
 
 ### RecordMetric
 
@@ -75,7 +75,7 @@ $env:NEW_RELIC_APP_NAME="api-custom-events-and-metrics-example"
 dotnet run -c Release --no-build
 ```
 
-**Linux / macOS (bash):**
+**Linux (bash):**
 
 ```bash
 # Build first so the agent files are in the output directory
@@ -113,7 +113,7 @@ The `PeriodicMaintenanceService` background service runs a simulated maintenance
 
 ### Example Requests
 
-**Linux / macOS (bash):**
+**Linux (bash):**
 
 ```bash
 # Successful checkout (200 OK) — verify the app is running
