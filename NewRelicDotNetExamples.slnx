@@ -1,0 +1,79 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/api-custom-attributes/">
+    <Project Path="api-custom-attributes/api-custom-attributes.csproj" />
+  </Folder>
+  <Folder Name="/api-error-handling/">
+    <Project Path="api-error-handling/api-error-handling.csproj" />
+  </Folder>
+  <Folder Name="/api-logs-in-context/">
+    <Project Path="api-logs-in-context/api-logs-in-context.csproj" />
+  </Folder>
+  <Folder Name="/console/">
+    <Project Path="console/ConsoleSample.csproj" />
+  </Folder>
+  <Folder Name="/custom-distributed-tracing/">
+    <File Path="custom-distributed-tracing/docker-compose.yml" />
+    <File Path="custom-distributed-tracing/README.md" />
+    <Project Path="custom-distributed-tracing/Receiver/Receiver.csproj" />
+    <Project Path="custom-distributed-tracing/Sender/Sender.csproj" />
+  </Folder>
+  <Folder Name="/custom-instrumentation/" />
+  <Folder Name="/custom-instrumentation/xml-custom-instrumentation/">
+    <Project Path="custom-instrumentation/xml-custom-instrumentation/CustomInstrumentationXml.csproj" />
+  </Folder>
+  <Folder Name="/docker-agent-installed/">
+    <File Path="docker-agent-installed/README.md" />
+  </Folder>
+  <Folder Name="/docker-agent-installed/alpine/">
+    <Project Path="docker-agent-installed/alpine/WeatherForecast.csproj" />
+  </Folder>
+  <Folder Name="/docker-agent-installed/centos/">
+    <Project Path="docker-agent-installed/centos/WeatherForecast.csproj" />
+  </Folder>
+  <Folder Name="/docker-agent-installed/ubuntu/">
+    <Project Path="docker-agent-installed/ubuntu/WeatherForecast.csproj" />
+  </Folder>
+  <Folder Name="/docker-agent-nuget/">
+    <File Path="docker-agent-nuget/README.md" />
+  </Folder>
+  <Folder Name="/docker-agent-nuget/alpine/">
+    <Project Path="docker-agent-nuget/alpine/WeatherForecast.csproj" />
+  </Folder>
+  <Folder Name="/docker-agent-nuget/centos/">
+    <Project Path="docker-agent-nuget/centos/WeatherForecast.csproj" />
+  </Folder>
+  <Folder Name="/docker-agent-nuget/ubuntu/">
+    <Project Path="docker-agent-nuget/ubuntu/WeatherForecast.csproj" />
+  </Folder>
+  <Folder Name="/elastic-beanstalk/">
+    <Project Path="elastic-beanstalk/ElasticBeanstalkLinux/ElasticBeanstalkLinux.csproj" />
+    <Project Path="elastic-beanstalk/ElasticBeanstalkWindows/ElasticBeanstalkWindows.csproj" />
+  </Folder>
+  <Folder Name="/ignore-errors/">
+    <Project Path="ignore-errors/ignore-errors.csproj" />
+  </Folder>
+  <Folder Name="/kubernetes/">
+    <File Path="kubernetes/Dockerfile" />
+    <File Path="kubernetes/README.md" />
+  </Folder>
+  <Folder Name="/kubernetes/Chart/">
+    <File Path="kubernetes/chart/.helmignore" />
+    <File Path="kubernetes/chart/Chart.yaml" />
+  </Folder>
+  <Folder Name="/kubernetes/Chart/templates/">
+    <File Path="kubernetes/chart/templates/deployment.yaml" />
+    <File Path="kubernetes/chart/templates/instrumentation.yaml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="cla.md" />
+    <File Path="CONTRIBUTING.md" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+</Solution>
