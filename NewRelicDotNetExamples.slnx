@@ -7,6 +7,9 @@
   <Folder Name="/api-custom-attributes/">
     <Project Path="api-custom-attributes/api-custom-attributes.csproj" />
   </Folder>
+  <Folder Name="/api-custom-events-and-metrics/">
+    <Project Path="api-custom-events-and-metrics/api-custom-events-and-metrics.csproj" />
+  </Folder>
   <Folder Name="/api-error-handling/">
     <Project Path="api-error-handling/api-error-handling.csproj" />
   </Folder>
