@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>default</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>KafkaCustomInstrumentation</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Use the latest version of the Confluent.Kafka package.
+      NOTE: For a production app, you should always reference a specific package version
+    -->
+    <PackageReference Include="Confluent.Kafka" Version="*" />
+    <!--
+      Use the latest version of the NewRelic.Agent package.
+      NOTE: For a production app, you should always reference a specific package version
+    -->
+    <PackageReference Include="NewRelic.Agent" Version="*" />
+    <PackageReference Include="NewRelic.Agent.Api" Version="*" />
+  </ItemGroup>
+
+</Project>
