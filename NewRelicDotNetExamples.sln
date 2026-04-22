@@ -106,6 +106,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api-custom-events-and-metri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api-custom-events-and-metrics", "api-custom-events-and-metrics\api-custom-events-and-metrics.csproj", "{E8A888FF-B716-49D9-8CEB-284F11170B09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kafka-custom-instrumentation", "kafka-custom-instrumentation", "{F1A2B3C4-D5E6-4F7A-8B9C-0D1E2F3A4B5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kafka-custom-instrumentation", "kafka-custom-instrumentation\kafka-custom-instrumentation.csproj", "{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -308,6 +312,18 @@ Global
 		{E8A888FF-B716-49D9-8CEB-284F11170B09}.Release|x64.Build.0 = Release|Any CPU
 		{E8A888FF-B716-49D9-8CEB-284F11170B09}.Release|x86.ActiveCfg = Release|Any CPU
 		{E8A888FF-B716-49D9-8CEB-284F11170B09}.Release|x86.Build.0 = Release|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Debug|x64.Build.0 = Debug|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|x64.ActiveCfg = Release|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|x64.Build.0 = Release|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -338,6 +354,7 @@ Global
 		{1C903EA8-BC15-470A-AEDA-ED7CC7474BE9} = {A1B2C3D4-E5F6-4A7B-8C9D-0E1F2A3B4C5D}
 		{1046409A-1E21-4FB3-8EFA-FFDC38B082D0} = {B2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}
 		{E8A888FF-B716-49D9-8CEB-284F11170B09} = {E889351A-92EC-B9D4-C4E3-CC67B911FB4D}
+		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D} = {F1A2B3C4-D5E6-4F7A-8B9C-0D1E2F3A4B5C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {974824D6-453F-4962-AF8A-31949A0F847E}
