@@ -107,10 +107,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api-custom-events-and-metrics", "api-custom-events-and-metrics\api-custom-events-and-metrics.csproj", "{E8A888FF-B716-49D9-8CEB-284F11170B09}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kafka-custom-instrumentation", "kafka-custom-instrumentation", "{F1A2B3C4-D5E6-4F7A-8B9C-0D1E2F3A4B5C}"
-	ProjectSection(SolutionItems) = preProject
-		kafka-custom-instrumentation\docker-compose.yml = kafka-custom-instrumentation\docker-compose.yml
-		kafka-custom-instrumentation\README.md = kafka-custom-instrumentation\README.md
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kafka-custom-instrumentation", "kafka-custom-instrumentation\kafka-custom-instrumentation.csproj", "{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}"
 EndProject

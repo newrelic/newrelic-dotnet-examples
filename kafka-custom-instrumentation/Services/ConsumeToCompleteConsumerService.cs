@@ -12,9 +12,7 @@ namespace KafkaCustomInstrumentation.Services;
 /// lifecycle from the Consume() call to the end of processing.
 ///
 /// Use this pattern when consume lag is itself a KPI — for example, when your SLA
-/// requires that messages are fully processed within N seconds of being produced, or
-/// when you want APM to show both how long a message waited in the queue and how long
-/// processing took, as two segments in the same transaction.
+/// requires that messages are fully processed within N seconds of being produced.
 ///
 /// The key requirement for the .NET agent to auto-instrument consumer.Consume() is that
 /// it must be called from inside an active transaction. In this pattern, ConsumeAndProcess()

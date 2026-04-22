@@ -1,4 +1,6 @@
 services:
+  # Single-node Kafka broker running in KRaft mode (no ZooKeeper). Exposes port 9092
+  # for connections from the host and port 29092 for inter-container communication.
   kafka:
     image: confluentinc/cp-kafka:7.6.0
     hostname: kafka
@@ -18,6 +20,9 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
       CLUSTER_ID: "MkU3OEVBNTcwNTJENDM2Qk"
 
+  # One-shot init container: waits for the broker to be ready, then pre-creates the
+  # two topics used by the example app. This avoids a race condition where the app
+  # starts before Kafka has finished initializing and auto-create-topics hasn't fired yet.
   kafka-init:
     image: confluentinc/cp-kafka:7.6.0
     depends_on:
