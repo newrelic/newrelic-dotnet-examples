@@ -55,6 +55,10 @@ App_Data
 # Docker env files
 *.env
 
+# User's Claude settings
+.claude
+
+
 
 
 
