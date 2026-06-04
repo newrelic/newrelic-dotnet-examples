@@ -17,7 +17,9 @@ namespace OtelBridgeAiMonitoring.Hubs;
 /// transaction for each WebSocket invocation (SignalR invocations are not HTTP requests, so
 /// they are not auto-instrumented). The GenAI spans produced by the OpenTelemetry-instrumented
 /// chat client nest under that transaction and are ingested by the agent's OpenTelemetry bridge
-/// as AI Monitoring data.
+/// as AI Monitoring data. The <c>[Transaction]</c> attribute is required because of SignalR's
+/// hosting model — not because of AI Monitoring; a controller action or minimal-API endpoint
+/// would be auto-instrumented without it.
 /// </summary>
 public class ChatHub : Hub
 {

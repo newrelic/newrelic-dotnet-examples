@@ -24,7 +24,7 @@ Browser ──WebSocket──► ChatHub.SendMessage  [Transaction]
 
 2. **The New Relic agent reads those spans via its OpenTelemetry bridge.** When the bridge is enabled, the agent listens to the application's `ActivitySource`s directly, parses the `gen_ai.*` tags, and produces New Relic AI Monitoring events (`LlmChatCompletionSummary`, `LlmChatCompletionMessage`, etc.). The application does **not** send OTLP to New Relic — the agent does the export. The bundled console exporter exists only so you can see the spans locally.
 
-3. **Hub methods carry the `[Transaction]` attribute.** SignalR hub invocations arrive over a WebSocket and are not HTTP requests, so they are not auto-instrumented. `[Transaction]` (from `NewRelic.Agent.Api`) starts a New Relic transaction for each call so the GenAI spans have a parent transaction to nest under.
+3. **Hub methods carry the `[Transaction]` attribute.** SignalR hub invocations arrive over a WebSocket and are not HTTP requests, so they are not auto-instrumented. `[Transaction]` (from `NewRelic.Agent.Api`) starts a New Relic transaction for each call so the GenAI spans have a parent transaction to nest under. This is a consequence of SignalR's hosting model, not an AI Monitoring requirement — in a controller-based or minimal-API web app, the agent auto-instruments each HTTP request and no `[Transaction]` attribute is needed.
 
 ## Key Concepts Demonstrated
 
@@ -61,9 +61,11 @@ It also depends on three agent settings. **Two of them are off by default**, so 
 
 See the [.NET agent AI Monitoring configuration docs](https://docs.newrelic.com/docs/apm/agents/net-agent/configuration/net-agent-configuration/#ai_monitoring).
 
-### Why the `[Transaction]` Attribute Is Needed
+### Why the `[Transaction]` Attribute Is Needed Here
 
 The agent's built-in ASP.NET Core instrumentation automatically creates a transaction for each incoming HTTP request. SignalR hub method invocations, however, arrive over a persistent WebSocket connection and are not individual HTTP requests, so auto-instrumentation does not apply. The `[Transaction]` attribute on each `ChatHub` method ensures the agent creates a transaction for the call, giving the GenAI spans a parent transaction to nest under.
+
+In short, the attribute here addresses *how SignalR is hosted*, and has nothing to do with AI Monitoring specifically. If this example exposed its model calls through a controller action or minimal-API endpoint instead of a SignalR hub, the agent's automatic ASP.NET Core instrumentation would create the transaction and the attribute would be unnecessary.
 
 ## What the App Does
 
