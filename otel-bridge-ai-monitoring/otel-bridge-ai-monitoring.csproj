@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>OtelBridgeAiMonitoring</RootNamespace>
+    <AssemblyName>OtelBridgeAiMonitoring</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Microsoft.Extensions.AI is the provider-agnostic abstraction being instrumented.
+         The underlying client can be Azure OpenAI (Azure.AI.OpenAI) or OpenAI (OpenAI);
+         the example selects between them at runtime via the "AI:Provider" setting.
+         Versions match the combination verified by the agent's integration tests:
+         OpenAI 2.8.0+ is required by the agent's GenAI bridge. -->
+    <PackageReference Include="Azure.AI.OpenAI" Version="2.8.0-beta.1" />
+    <PackageReference Include="OpenAI" Version="2.8.0" />
+    <PackageReference Include="Microsoft.Extensions.AI" Version="10.3.0" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="10.3.0" />
+
+    <!-- OpenTelemetry: produces the GenAI spans the New Relic agent ingests via its OTel bridge.
+         The console exporter is included only so you can see the spans locally; it is not
+         required for New Relic ingestion. -->
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.15.3" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.15.3" />
+
+    <!-- NewRelic.Agent bundles the agent runtime (profiler, config, extensions) into the build
+         output so the example can be run end-to-end with the CLR profiler env vars below.
+         NewRelic.Agent.Api provides the [Transaction] attribute used in ChatHub. -->
+    <PackageReference Include="NewRelic.Agent" Version="*" />
+    <PackageReference Include="NewRelic.Agent.Api" Version="*" />
+  </ItemGroup>
+
+</Project>

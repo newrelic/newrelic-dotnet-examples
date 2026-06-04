@@ -1,0 +1,150 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "AI Chat";
+}
+
+<h2>AI Chat</h2>
+<p class="text-muted small mb-3">
+    <code>Microsoft.Extensions.AI</code> + Azure OpenAI over a SignalR WebSocket &mdash;
+    instrumented with OpenTelemetry (source <code>OtelBridgeAiMonitoring</code>,
+    <code>EnableSensitiveData = true</code>) and ingested by the New Relic OpenTelemetry bridge.
+</p>
+
+<div id="chat-box" class="border rounded p-3 mb-3 bg-light" style="height: 420px; overflow-y: auto;">
+    <div id="messages"></div>
+</div>
+
+<div class="mb-2">
+    <textarea id="prompt-input" class="form-control" rows="2"
+              placeholder="Type a message and press Enter or click a send button..."
+              onkeydown="handleKey(event)"></textarea>
+</div>
+
+<div class="d-flex gap-2 align-items-center">
+    <button id="btn-standard" class="btn btn-primary" onclick="sendStandard()">Send (Standard)</button>
+    <button id="btn-streaming" class="btn btn-secondary" onclick="sendStreaming()">Send (Streaming)</button>
+    <button id="btn-failure" class="btn btn-outline-danger" onclick="sendFailure()">Test Error</button>
+    <span id="connection-status" class="ms-auto text-muted small">Connecting&hellip;</span>
+</div>
+
+@section Scripts {
+<script src="https://unpkg.com/@@microsoft/signalr@@8.0.7/dist/browser/signalr.min.js"></script>
+<script>
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/chathub")
+        .withAutomaticReconnect()
+        .build();
+
+    let streamingDiv = null;
+
+    connection.on("ReceiveMessage", text => {
+        appendMessage("ai", text);
+        setReady(true);
+    });
+
+    connection.on("ReceiveChunk", chunk => {
+        if (!streamingDiv) {
+            streamingDiv = appendMessage("ai", "");
+        }
+        streamingDiv.textContent += chunk;
+        scrollToBottom();
+    });
+
+    connection.on("StreamComplete", () => {
+        streamingDiv = null;
+        setReady(true);
+    });
+
+    connection.on("ReceiveError", error => {
+        appendMessage("error", error);
+        streamingDiv = null;
+        setReady(true);
+    });
+
+    connection.onreconnecting(() => setStatus("Reconnecting…", "text-warning"));
+    connection.onreconnected(() => setStatus("Connected", "text-success"));
+    connection.onclose(() => { setStatus("Disconnected", "text-danger"); setReady(false); });
+
+    connection.start()
+        .then(() => setStatus("Connected", "text-success"))
+        .catch(err => setStatus("Connection failed", "text-danger"));
+
+    function handleKey(e) {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendStandard();
+        }
+    }
+
+    function sendStandard() {
+        const prompt = getPrompt();
+        if (!prompt) return;
+        appendMessage("user", prompt);
+        setReady(false);
+        connection.invoke("SendMessage", prompt).catch(err => appendMessage("error", err.toString()));
+    }
+
+    function sendStreaming() {
+        const prompt = getPrompt();
+        if (!prompt) return;
+        appendMessage("user", prompt);
+        setReady(false);
+        connection.invoke("SendMessageStreaming", prompt).catch(err => appendMessage("error", err.toString()));
+    }
+
+    function sendFailure() {
+        const prompt = getPrompt();
+        if (!prompt) return;
+        appendMessage("user", "[failure test] " + prompt);
+        setReady(false);
+        connection.invoke("SendMessageFailure", prompt).catch(err => appendMessage("error", err.toString()));
+    }
+
+    function getPrompt() {
+        const el = document.getElementById("prompt-input");
+        const val = el.value.trim();
+        if (val) el.value = "";
+        return val;
+    }
+
+    function appendMessage(role, text) {
+        const wrap = document.createElement("div");
+        wrap.className = "mb-2 d-flex " + (role === "user" ? "justify-content-end" : "justify-content-start");
+
+        const bubble = document.createElement("div");
+        bubble.className = "rounded px-3 py-2 " + (
+            role === "user"  ? "bg-primary text-white" :
+            role === "error" ? "bg-danger text-white" :
+                               "bg-white border"
+        );
+        bubble.style.maxWidth = "80%";
+        bubble.style.whiteSpace = "pre-wrap";
+        bubble.style.wordBreak = "break-word";
+        bubble.textContent = text;
+
+        wrap.appendChild(bubble);
+        document.getElementById("messages").appendChild(wrap);
+        scrollToBottom();
+        return bubble;
+    }
+
+    function scrollToBottom() {
+        const box = document.getElementById("chat-box");
+        box.scrollTop = box.scrollHeight;
+    }
+
+    function setReady(enabled) {
+        ["btn-standard", "btn-streaming", "btn-failure"].forEach(id => {
+            document.getElementById(id).disabled = !enabled;
+        });
+        if (enabled) document.getElementById("prompt-input").focus();
+    }
+
+    function setStatus(text, cls) {
+        const el = document.getElementById("connection-status");
+        el.textContent = text;
+        el.className = "ms-auto small " + cls;
+    }
+</script>
+}
