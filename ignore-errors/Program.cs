@@ -36,8 +36,7 @@ app.MapGet("/weatherforecast", () =>
         .ToArray();
     return forecast;
 })
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+.WithName("GetWeatherForecast");
 
 // An endpoint to return an error status code for the purposes of testing the agent's ignored and expected errors features
 app.MapGet("/throwerror", () =>
@@ -45,8 +44,7 @@ app.MapGet("/throwerror", () =>
     return Results.StatusCode(422);
     
 })
-.WithName("ThrowError")
-.WithOpenApi();
+.WithName("ThrowError");
 
 app.Run();
 
