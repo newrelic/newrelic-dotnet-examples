@@ -110,6 +110,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kafka-custom-instrumentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kafka-custom-instrumentation", "kafka-custom-instrumentation\kafka-custom-instrumentation.csproj", "{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api-dependency-injection", "api-dependency-injection", "{C3D4E5F6-A7B8-4C9D-0E1F-2A3B4C5D6E7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api-dependency-injection", "api-dependency-injection\api-dependency-injection.csproj", "{033B6AFD-A0C0-4500-A93A-27E64468D556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "otel-bridge-ai-monitoring", "otel-bridge-ai-monitoring\otel-bridge-ai-monitoring.csproj", "{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -324,6 +330,30 @@ Global
 		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|x64.Build.0 = Release|Any CPU
 		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|x86.ActiveCfg = Release|Any CPU
 		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D}.Release|x86.Build.0 = Release|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Debug|x64.Build.0 = Debug|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Debug|x86.Build.0 = Debug|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Release|x64.ActiveCfg = Release|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Release|x64.Build.0 = Release|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Release|x86.ActiveCfg = Release|Any CPU
+		{033B6AFD-A0C0-4500-A93A-27E64468D556}.Release|x86.Build.0 = Release|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Debug|x64.Build.0 = Debug|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Debug|x86.Build.0 = Debug|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Release|x64.ActiveCfg = Release|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Release|x64.Build.0 = Release|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Release|x86.ActiveCfg = Release|Any CPU
+		{86C58437-4E23-4EC3-9A42-EF8258B6D0FC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -355,6 +385,7 @@ Global
 		{1046409A-1E21-4FB3-8EFA-FFDC38B082D0} = {B2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}
 		{E8A888FF-B716-49D9-8CEB-284F11170B09} = {E889351A-92EC-B9D4-C4E3-CC67B911FB4D}
 		{A1F2E3D4-C5B6-4A7F-8E9D-0C1B2A3F4E5D} = {F1A2B3C4-D5E6-4F7A-8B9C-0D1E2F3A4B5C}
+		{033B6AFD-A0C0-4500-A93A-27E64468D556} = {C3D4E5F6-A7B8-4C9D-0E1F-2A3B4C5D6E7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {974824D6-453F-4962-AF8A-31949A0F847E}
