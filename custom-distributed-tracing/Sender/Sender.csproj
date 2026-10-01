@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.20.2" />
-    <PackageReference Include="NewRelic.Agent" Version="10.54.0" />
-    <PackageReference Include="NewRelic.Agent.Api" Version="10.54.0" />
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.21.0" />
+    <PackageReference Include="NewRelic.Agent" Version="10.55.0" />
+    <PackageReference Include="NewRelic.Agent.Api" Version="10.55.0" />
   </ItemGroup>
 
 </Project>
