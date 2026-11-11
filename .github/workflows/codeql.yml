@@ -35,11 +35,11 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Setup .NET 10 Preview
+    - name: Setup .NET 11
       uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
       with:
-        dotnet-version: '10.0.x'
-        dotnet-quality: 'preview'
+        dotnet-version: '11.0.x'
+        dotnet-quality: 'ga'
 
 
     - name: Initialize CodeQL

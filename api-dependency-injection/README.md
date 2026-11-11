@@ -116,7 +116,7 @@ app then runs with a silently disabled API.
 
 ### Prerequisites
 
-- .NET 10 SDK
+- .NET 11 SDK
 - A New Relic account with a license key
 
 ### NuGet packages
@@ -133,8 +133,8 @@ dotnet build -c Release
 
 $env:CORECLR_ENABLE_PROFILING=1
 $env:CORECLR_PROFILER="{36032161-FFC0-4B61-B559-F6C5D41BAE5A}"
-$env:CORECLR_PROFILER_PATH="$PWD\bin\Release\net10.0\newrelic\NewRelic.Profiler.dll"
-$env:CORECLR_NEWRELIC_HOME="$PWD\bin\Release\net10.0\newrelic"
+$env:CORECLR_PROFILER_PATH="$PWD\bin\Release\net11.0\newrelic\NewRelic.Profiler.dll"
+$env:CORECLR_NEWRELIC_HOME="$PWD\bin\Release\net11.0\newrelic"
 $env:NEW_RELIC_LICENSE_KEY="<your-new-relic-license-key>"
 $env:NEW_RELIC_APP_NAME="api-dependency-injection-example"
 
@@ -148,8 +148,8 @@ dotnet build -c Release
 
 export CORECLR_ENABLE_PROFILING=1
 export CORECLR_PROFILER="{36032161-FFC0-4B61-B559-F6C5D41BAE5A}"
-export CORECLR_PROFILER_PATH="$PWD/bin/Release/net10.0/newrelic/libNewRelicProfiler.so"
-export CORECLR_NEWRELIC_HOME="$PWD/bin/Release/net10.0/newrelic"
+export CORECLR_PROFILER_PATH="$PWD/bin/Release/net11.0/newrelic/libNewRelicProfiler.so"
+export CORECLR_NEWRELIC_HOME="$PWD/bin/Release/net11.0/newrelic"
 export NEW_RELIC_LICENSE_KEY="<your-new-relic-license-key>"
 export NEW_RELIC_APP_NAME="api-dependency-injection-example"
 

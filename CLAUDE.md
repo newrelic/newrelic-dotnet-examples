@@ -8,7 +8,7 @@ Collection of example applications demonstrating how to install and use the New 
 
 ## Build
 
-All examples are in a single solution. Requires .NET 10 SDK.
+All examples are in a single solution. Requires .NET 11 SDK.
 
 ```bash
 dotnet build                              # build entire solution
