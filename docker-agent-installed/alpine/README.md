@@ -7,6 +7,9 @@ The sample application is just the "default" application created by running `dot
 The two important parts of this sample are installation of the New Relic .NET Agent and setting the required environment variables to enable the .NET Agent
 to load and instrument the sample app. Refer to `Dockerfile` for details.
 
+The `Dockerfile` pins the agent version and checks the SHA-256 hash of the downloaded tarball; the build fails if it does not match.
+To use another agent version, change both values (see the comments in the `Dockerfile`).
+
 ## To run this sample:
 1. Edit `Dockerfile` and replace `<your-new-relic-license-key>` with your New Relic license key.
 2. Open a command prompt (or Powershell) and run:

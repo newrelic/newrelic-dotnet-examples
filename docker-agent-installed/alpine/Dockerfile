@@ -12,22 +12,25 @@ RUN dotnet publish -c Release -o /app/publish
 
 FROM base AS final
 
-# Download and install the New Relic .NET Agent using the tarball for the latest agent release. 
+# Download, verify and install the New Relic .NET Agent from the release tarball.
 #
-# To use a specific version instead, modify the wget and tar commands to reference the full path to the 
-# dotnet agent version tarball you want to use instead of the wildcard specification
-# 
-# For example, to use v10.21.1 of the .NET agent, you would run the following command:
-# RUN apk update && apk add --no-cache wget tar \
-#     && wget https://download.newrelic.com/dot_net_agent/previous_releases/10.21.1/newrelic-dotnet-agent-10.21.1.amd64.tar.gz \
-#     && tar -xzf -i download.newrelic.com/dot_net_agent/previous_releases/10.21.1/newrelic-dotnet-agent-10.21.1.amd64.tar.gz -C /usr/local \
-#     && rm -rf download.newrelic.com
-# 
-# the agent is installed at /usr/local/new-relic-dotnet-agent
+# The agent version and the SHA-256 hash of its tarball are pinned below. The build fails if the downloaded file does not
+# match the hash, so a file that was corrupted or changed after it was published is never installed.
+#
+# To use another version, change both values. The hash of newrelic-dotnet-agent_<version>_amd64.tar.gz is listed in
+# https://github.com/newrelic/newrelic-dotnet-agent/blob/main/release-data/download-site-hashes.json
+# For agent version 10.58.0 and higher you can also check the file's GitHub attestation:
+#   gh attestation verify newrelic-dotnet-agent_<version>_amd64.tar.gz --repo newrelic/newrelic-dotnet-agent
+# For more details, see https://docs.newrelic.com/docs/apm/agents/net-agent/other-installation/how-verify-checksum-net-agent-downloads/
+#
+# The agent is installed at /usr/local/newrelic-dotnet-agent
+ARG NEW_RELIC_AGENT_VERSION=10.58.0
+ARG NEW_RELIC_AGENT_SHA256=1a55362d8d430728215854a85e7483dce02c7aa43a968a5b8d741cbea55ade8d
 RUN apk update && apk add --no-cache wget tar \
-    && wget https://download.newrelic.com/dot_net_agent/latest_release/newrelic-dotnet-agent_amd64.tar.gz -r \
-    && tar -xzf download.newrelic.com/dot_net_agent/latest_release/newrelic-dotnet-agent_amd64.tar.gz -C /usr/local \ 
-    && rm -rf download.newrelic.com
+    && wget -q https://download.newrelic.com/dot_net_agent/previous_releases/${NEW_RELIC_AGENT_VERSION}/newrelic-dotnet-agent_${NEW_RELIC_AGENT_VERSION}_amd64.tar.gz -O /tmp/newrelic-dotnet-agent.tar.gz \
+    && echo "${NEW_RELIC_AGENT_SHA256}  /tmp/newrelic-dotnet-agent.tar.gz" | sha256sum -c - \
+    && tar -xzf /tmp/newrelic-dotnet-agent.tar.gz -C /usr/local \
+    && rm /tmp/newrelic-dotnet-agent.tar.gz
 
 # Enable the agent
 ENV CORECLR_ENABLE_PROFILING=1 \
