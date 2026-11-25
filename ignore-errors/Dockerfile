@@ -15,8 +15,15 @@ RUN dotnet publish -c Release -o /app/publish
 FROM base AS final
 
 # Install New Relic .NET agent
+#
+# The agent version and the SHA-256 hash of its deb file are pinned below. The build fails if the downloaded file does not
+# match the hash. To use another version, change both values: the hash of newrelic-dotnet-agent_<version>_amd64.deb is listed in
+# https://github.com/newrelic/newrelic-dotnet-agent/blob/main/release-data/download-site-hashes.json
+ARG NEW_RELIC_AGENT_VERSION=10.58.0
+ARG NEW_RELIC_AGENT_SHA256=cfbe4b6015fdc70dfd1fdb54053f4712b9e284b00552c6a620170aa41b2ffc34
 RUN apt update && apt install -y wget
-RUN wget https://download.newrelic.com/dot_net_agent/previous_releases/10.27.0/newrelic-dotnet-agent_10.27.0_amd64.deb -O agent.deb
+RUN wget https://download.newrelic.com/dot_net_agent/previous_releases/${NEW_RELIC_AGENT_VERSION}/newrelic-dotnet-agent_${NEW_RELIC_AGENT_VERSION}_amd64.deb -O agent.deb
+RUN echo "${NEW_RELIC_AGENT_SHA256}  agent.deb" | sha256sum -c -
 RUN dpkg -i agent.deb
 
 # configure agent env vars

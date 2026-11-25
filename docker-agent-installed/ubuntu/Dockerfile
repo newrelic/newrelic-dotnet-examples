@@ -16,8 +16,8 @@ FROM base AS final
 #
 # To use a specific version instead, modify the apt-get install command to reference a specific version
 #
-# For example, to use v10.21.1 of the .NET agent, you would use the following apt-get install command:
-#  apt-get install -y newrelic-dotnet-agent=10.21.1
+# For example, to use v10.58.0 of the .NET agent, you would use the following apt-get install command:
+#  apt-get install -y newrelic-dotnet-agent=10.58.0
 #
 # the agent is installed at /usr/local/new-relic-dotnet-agent
 RUN apt-get update && apt-get install -y curl ca-certificates gnupg \

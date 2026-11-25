@@ -19,20 +19,24 @@ RUN dnf install aspnetcore-runtime-10.0 -y
 # install wget
 RUN yum -y update && yum -y install wget
 
-# Download and install the New Relic .NET Agent using the rpm package for the latest agent release. 
+# Download, verify and install the New Relic .NET Agent from the rpm package.
 #
-# To use a specific version instead, modify the wget and rpm commands to reference the full path to the 
-# dotnet agent version rpm file you want to use instead of the wildcard specification
-# 
-# For example, to use v10.21.1 of the .NET agent, you would run the following command:
-# RUN wget https://download.newrelic.com/dot_net_agent/previous_releases/10.21.1/newrelic-dotnet-agent-10.21.1-1.x86_64.rpm \
-#     && rpm -i download.newrelic.com/dot_net_agent/previous_releases/10.21.1/newrelic-dotnet-agent-10.21.1-1.x86_64.rpm \
-#     && rm -rf download.newrelic.com
-# 
-# the agent is installed at /usr/local/new-relic-dotnet-agent
-RUN wget https://download.newrelic.com/dot_net_agent/latest_release -A '*.x86_64.rpm' -r \
-    && rpm -i download.newrelic.com/dot_net_agent/latest_release/*.x86_64.rpm \
-    && rm -rf download.newrelic.com
+# The agent version and the SHA-256 hash of its rpm file are pinned below. The build fails if the downloaded file does not
+# match the hash, so a file that was corrupted or changed after it was published is never installed.
+#
+# To use another version, change both values. The hash of newrelic-dotnet-agent-<version>-1.x86_64.rpm is listed in
+# https://github.com/newrelic/newrelic-dotnet-agent/blob/main/release-data/download-site-hashes.json
+# For agent version 10.58.0 and higher you can also check the file's GitHub attestation:
+#   gh attestation verify newrelic-dotnet-agent-<version>-1.x86_64.rpm --repo newrelic/newrelic-dotnet-agent
+# For more details, see https://docs.newrelic.com/docs/apm/agents/net-agent/other-installation/how-verify-checksum-net-agent-downloads/
+#
+# The agent is installed at /usr/local/newrelic-dotnet-agent
+ARG NEW_RELIC_AGENT_VERSION=10.58.0
+ARG NEW_RELIC_AGENT_SHA256=e7690ac9d4ad88493be69dd0bf7b5383b24c85c16ff4d69d5aa288850f0f2131
+RUN wget -q https://download.newrelic.com/dot_net_agent/previous_releases/${NEW_RELIC_AGENT_VERSION}/newrelic-dotnet-agent-${NEW_RELIC_AGENT_VERSION}-1.x86_64.rpm -O /tmp/newrelic-dotnet-agent.rpm \
+    && echo "${NEW_RELIC_AGENT_SHA256}  /tmp/newrelic-dotnet-agent.rpm" | sha256sum -c - \
+    && rpm -i /tmp/newrelic-dotnet-agent.rpm \
+    && rm /tmp/newrelic-dotnet-agent.rpm
 
 # Enable the agent
 ENV CORECLR_ENABLE_PROFILING=1 \
